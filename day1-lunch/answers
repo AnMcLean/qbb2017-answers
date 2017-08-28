@@ -6,7 +6,7 @@ wc -l BDGP6.Ensembl.81.gtf
 
 2.
 
-grep -c Sxl BDGP6.Ensembl.81.gtf
+grep -c “Sxl” BDGP6.Ensembl.81.gtf
 
 514
 
