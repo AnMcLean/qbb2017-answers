@@ -1,0 +1,12 @@
+1.
+mv SRR072893.fastq day1-homework/
+cd day1-homework/
+fastqc SRR072893.fastq
+open SRR072893_fastqc.html
+2.
+hisat2 -p 4 -q -x BDGP6 -U SRR072893.fastq -S mappedreads.sam
+3.
+samtools sort -o mappedreads.sorted.bam mappedreads.sam
+samtools index mappedreads.sorted.bam 
+4.
+stringtie mappedreads.sorted.bam -G BDGP6.Ensembl.81.gtf -o output.gtf -p 4 -e -B
