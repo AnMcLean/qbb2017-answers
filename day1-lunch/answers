@@ -9,3 +9,16 @@ wc -l BDGP6.Ensembl.81.gtf
 grep -c Sxl BDGP6.Ensembl.81.gtf
 
 514
+
+3.
+
+cut -f 3 BDGP6.Ensembl.81.gtf | sort | uniq -d
+
+CDS
+Selenocysteine
+UTR
+exon
+gene
+start_codon
+stop_codon
+transcript
