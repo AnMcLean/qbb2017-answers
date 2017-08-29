@@ -1,0 +1,22 @@
+1.
+cat ~/qbb2017-answers/day2-lunch/mappedreads.sam | ./01-question1.py 
+22145900
+2.
+cat ~/qbb2017-answers/day2-lunch/mappedreads.sam | ./02-question2.py
+14589427
+3.
+cat ~/qbb2017-answers/day2-lunch/mappedreads.sam | ./03-question3.py
+16602832
+4.
+cat ~/qbb2017-answers/day2-lunch/mappedreads.sam | ./04-question4.py  
+2R
+3R
+3R
+X
+3L
+2R
+2L
+*
+2R
+3L
+3L
