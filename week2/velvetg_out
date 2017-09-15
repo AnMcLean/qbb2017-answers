@@ -1,0 +1,44 @@
+[0.000000] Reading graph file velvethdir/Graph
+[0.000051] Graph has 306 nodes and 2000 sequences
+[0.004702] WARNING: NO COVERAGE CUTOFF PROVIDED
+[0.004704] Velvet will probably leave behind many detectable errors
+[0.004704] See manual for instructions on how to set the coverage cutoff parameter
+[0.005277] Reading read set file velvethdir/Sequences;
+[0.005706] 2000 sequences found
+[0.007237] Done
+[0.009485] Removing contigs with coverage < -1.000000...
+[0.009501] Concatenation...
+[0.009506] Renumbering nodes
+[0.009506] Initial node count 306
+[0.009526] Removed 0 null nodes
+[0.009527] Concatenation over!
+[0.009533] Concatenation...
+[0.009537] Renumbering nodes
+[0.009537] Initial node count 306
+[0.009538] Removed 0 null nodes
+[0.009539] Concatenation over!
+[0.009543] Clipping short tips off graph, drastic
+[0.009557] Concatenation...
+[0.009561] Renumbering nodes
+[0.009561] Initial node count 306
+[0.009562] Removed 0 null nodes
+[0.009563] Concatenation over!
+[0.009563] 306 nodes left
+[0.009564] WARNING: NO EXPECTED COVERAGE PROVIDED
+[0.009565] Velvet will be unable to resolve any repeats
+[0.009566] See manual for instructions on how to set the expected coverage parameter
+[0.009566] Concatenation...
+[0.009570] Renumbering nodes
+[0.009570] Initial node count 306
+[0.009571] Removed 0 null nodes
+[0.009572] Concatenation over!
+[0.009572] Removing reference contigs with coverage < -1.000000...
+[0.009585] Concatenation...
+[0.009589] Renumbering nodes
+[0.009589] Initial node count 306
+[0.009590] Removed 0 null nodes
+[0.009591] Concatenation over!
+[0.009654] Writing contigs into velvethdir/contigs.fa...
+[0.017860] Writing into stats file velvethdir/stats.txt...
+[0.018543] Writing into graph file velvethdir/LastGraph...
+Final graph has 306 nodes and n50 of 233, max 968, total 47835, using 0/2000 reads
