@@ -1,0 +1,38 @@
+Spades:
+
+	Number of contigs: 123
+	Minimum contig length: 279
+	Maximum contig length: 1083
+	Average contig length: 379.804878
+	N50: 905.000000
+
+Velvet:
+
+	Number of contigs: 305
+	Minimum contig length: 100
+	Maximum contig length: 162
+	Average contig length: 186.796721
+	N50: 318.000000
+
+Spades: long reads
+	Number of contigs: 64
+	Minimum contig length: 1626
+	Maximum contig length: 949
+	Average contig length: 1096.328125
+	N50: 2541.000000
+
+Spades: better coverage
+
+	Number of contigs: 2
+	Minimum contig length: 111
+	Maximum contig length: 99915
+	Average contig length: 50013.000000
+	N50: 99915.000000
+
+Velvet: better coverage
+
+	Number of contigs: 11
+	Minimum contig length: 19911
+	Maximum contig length: 33235
+	Average contig length: 9096.454545
+	N50: 5592.000000
