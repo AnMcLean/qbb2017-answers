@@ -1,0 +1,15 @@
+Spades:
+
+Number of contigs: 123
+Minimum contig length: 279
+Maximum contig length: 1083
+Average contig length: 379.804878
+N50: 905.000000
+
+Velvet:
+
+Number of contigs: 305
+Minimum contig length: 100
+Maximum contig length: 162
+Average contig length: 186.796721
+N50: 318.000000
