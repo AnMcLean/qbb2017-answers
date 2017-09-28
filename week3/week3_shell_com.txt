@@ -1,0 +1,68 @@
+Week 3 Homework Shell Commands:
+
+# unzips the zip file containing ten FASTQ datasets:
+$ tar xfv BYxRM_subset.tar.xv
+
+# converting sacCer3.2bit reference to a faster file:
+$ twoBitToFa sacCer3.2bit sacCer3.fa
+
+# index reference fast file:
+$ bwa index sacCer3.fa
+
+# individually map each of read files to the reference:
+$ bwa mem -R '@RG\tID:09\tSM:09' sacCer3.fa A01_09.fastq > A01_09.sam
+$ bwa mem -R '@RG\tID:11\tSM:11' sacCer3.fa A01_11.fastq > A01_11.sam
+$ bwa mem -R '@RG\tID:23\tSM:23' sacCer3.fa A01_23.fastq > A01_23.sam
+$ bwa mem -R '@RG\tID:24\tSM:24' sacCer3.fa A01_24.fastq > A01_24.sam
+$ bwa mem -R '@RG\tID:27\tSM:27' sacCer3.fa A01_27.fastq > A01_27.sam
+$ bwa mem -R '@RG\tID:31\tSM:31' sacCer3.fa A01_31.fastq > A01_31.sam
+$ bwa mem -R '@RG\tID:35\tSM:35' sacCer3.fa A01_35.fastq > A01_35.sam
+$ bwa mem -R '@RG\tID:39\tSM:39' sacCer3.fa A01_39.fastq > A01_39.sam
+$ bwa mem -R '@RG\tID:62\tSM:62' sacCer3.fa A01_62.fastq > A01_62.sam
+$ bwa mem -R '@RG\tID:63\tSM:63' sacCer3.fa A01_63.fastq > A01_63.sam
+
+# convert .sam files to .bam files:
+samtools view -S -b A01_09.sam > A01_09.bam
+samtools view -S -b A01_11.sam > A01_11.bam
+samtools view -S -b A01_23.sam > A01_23.bam
+samtools view -S -b A01_24.sam > A01_24.bam
+samtools view -S -b A01_27.sam > A01_27.bam
+samtools view -S -b A01_31.sam > A01_31.bam
+samtools view -S -b A01_35.sam > A01_35.bam
+samtools view -S -b A01_39.sam > A01_39.bam
+samtools view -S -b A01_62.sam > A01_62.bam
+samtools view -S -b A01_63.sam > A01_63.bam
+
+# individually sort each of the mapped .bam files:
+$ sort A01_09.sam -o 09.sorted
+$ sort A01_11.sam -o 11.sorted
+$ sort A01_23.sam -o 23.sorted
+$ sort A01_24.sam -o 24.sorted
+$ sort A01_27.sam -o 27.sorted
+$ sort A01_31.sam -o 31.sorted
+$ sort A01_35.sam -o 35.sorted
+$ sort A01_39.sam -o 39.sorted
+$ sort A01_62.sam -o 62.sorted
+$ sort A01_63.sam -o 63.sorted
+
+# install freebayes:
+$ brew install freebayes
+
+# used freebayes to call variants:
+$ freebayes -f sacCer3.fa -b 09.sorted -b 11.sorted -b 23.sorted -b 24.sorted -b 27.sorted -b 31.sorted -b 35.sorted -b 39.sorted -b 62.sorted -b 63.sorted -v unfiltered
+
+# filtering variants based on genotype quality:
+$ vcffilter -f "QUAL > 100" unfiltered > filtered.vcf
+
+# create allele frequency plot:
+$ ./01-allele-freq-plot.py filtered.vcf 
+
+# download snpEFF:
+$ snpEff download
+
+# creates a file with the 5 variants with the highest quality:
+$ sort -k 6 -r -n filtered.vcf > top_5
+$ head -n 5 top_5 > best_5.vcf
+
+# snpEff analysis:
+$ snpEff R64-1-1.86 top_5 > snpEff_analysis
