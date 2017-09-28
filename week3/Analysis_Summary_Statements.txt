@@ -1,0 +1,1 @@
+The first and second highest quality variants each resulted in the modification of 11 up and downstream gene variants as well as 1 intergenic region.  The snpEff tool was not able to find the chromosome associated with the third, forth, or fifth highest quality variants.
