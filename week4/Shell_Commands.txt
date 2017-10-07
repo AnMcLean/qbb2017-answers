@@ -1,0 +1,23 @@
+Week 4 Shell Commands
+
+# unzip genotype data file:
+gunzip BYxRM_segs_saccer3.bam.simplified.vcf.xz
+
+# download most recent version of plink2:
+brew install plink2
+
+# use plink2 to conduct a PCA:
+plink2 --vcf BYxRM_segs_saccer3.bam.simplified.vcf --pca 2 --allow-extra-chr --mind
+
+# create histogram for allele frequency spectrum
+plink2 --freq --vcf BYxRM_segs_saccer3.bam.simplified.vcf -allow-extra-chr
+./02-AF-histogram.py plink.frq
+
+# replace all underscores with tabs in all lines after the first:
+awk 'NR > 1 {gsub(/_/,"\t")} {print}' BYxRM_PhenoData.txt > edited_phenotypes.txt
+
+# perform a quantitative association test for all phenotypes:
+plink2 --vcf BYxRM_segs_saccer3.bam.simplified.vcf --all-pheno --pheno edited_phenotypes.txt --allow-no-sex --linear --allow-extra-chr --out gwas_output
+
+#construct Manhattan plots
+./04-Man-automater.py
