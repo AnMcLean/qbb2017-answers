@@ -1,0 +1,33 @@
+tar -xzf g1e.tar.xz
+
+bowtie2-build chr19.fa chr19_indexed
+
+bowtie2 -x chr19_indexed -U CTCF_ER4.fastq -S CTCF_ER4.sam
+bowtie2 -x chr19_indexed -U CTCF_G1E.fastq -S CTCF_G1E.sam
+bowtie2 -x chr19_indexed -U input_ER4.fastq -S input_ER4.sam
+bowtie2 -x chr19_indexed -U input_G1E.fastq -S input_G1E.sam
+
+macs2 callpeak -c input_ER4.sam -t CTCF_ER4.sam --outdir ER4 
+macs2 callpeak -c input_G1E.sam -t CTCF_G1E.sam --outdir G1E 
+
+bedtools intersect -a ER4/NA_peaks.narrowPeak -b G1E/NA_peaks.narrowPeak -v > gain.bed
+bedtools intersect -a G1E/NA_peaks.narrowPeak -b ER4/NA_peaks.narrowPeak -v > loss.bed
+
+tar -xzf meme_4.12.0.tar
+tar -xzf motif_databases.12.15.tar
+
+head -n 100 gain.bed > gain_top100.bed
+head -n 100 loss.bed > loss_top100.bed
+
+bedtools getfasta -fi chr19.fa -bed G1E/NA_peaks.narrowPeak > G1E.fa
+bedtools getfasta -fi chr19.fa -bed ER4/NA_peaks.narrowPeak > ER4.fa
+
+cat G1E.fa ER4.fa > G1E-ER4.fa
+
+brew install cpanminus; cpanm install XML::Simple
+
+bedtools getfasta -fi chr19.fa -bed gain_top100.bed > gain.fa
+bedtools getfasta -fi chr19.fa -bed loss_top100.bed > loss.fa
+
+/usr/local/opt/meme/bin/meme-chip -meme-maxw 20 -db motif_databases/JASPAR/JASPAR_CORE_2016_vertebrates.meme gain.fa
+/usr/local/opt/meme/bin/meme-chip -meme-maxw 20 -db motif_databases/JASPAR/JASPAR_CORE_2016_vertebrates.meme loss.fa

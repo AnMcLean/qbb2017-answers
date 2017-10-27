@@ -1,0 +1,36 @@
+# DREME 4.11.2
+#     command: dreme -v 1 -oc memechip_out/dreme_out -png -dna -p memechip_out/seqs-centered -n memechip_out/seqs-shuffled
+#   positives: 56 from memechip_out/seqs-centered (Thu Oct 26 23:51:25 EDT 2017)
+#   negatives: 56 from memechip_out/seqs-shuffled (Thu Oct 26 23:51:25 EDT 2017)
+#        host: BOOTCAMP-18.local
+#        when: Thu Oct 26 23:51:30 EDT 2017
+
+MEME version 4.11.2
+
+ALPHABET "DNA" DNA-LIKE
+A "Adenine" CC0000 ~ T "Thymine" 008000
+C "Cytosine" 0000CC ~ G "Guanine" FFB300
+N "Any base" = ACGT
+X = ACGT
+. = ACGT
+V "Not T" = ACG
+H "Not G" = ACT
+D "Not C" = AGT
+B "Not A" = CGT
+M "Amino" = AC
+R "Purine" = AG
+W "Weak" = AT
+S "Strong" = CG
+Y "Pyrimidine" = CT
+K "Keto" = GT
+U = T
+END ALPHABET
+
+strands: + -
+
+Background letter frequencies (from dataset):
+A 0.265 C 0.242 G 0.231 T 0.262
+
+
+# Stopping reason: E-value threshold exceeded
+#    Running time: 0.43 seconds

@@ -1,0 +1,3 @@
+#Query ID	Target ID	Optimal offset	p-value	E-value	q-value	Overlap	Query consensus	Target consensus	Orientation
+AGRGGGC	MA0139.1	8	0.0008377	0.434766	0.719528	7	AGAGGGC	TGGCCACCAGGGGGCGCTA	+
+AGRGGGC	MA0155.1	4	0.00138746	0.720093	0.719528	7	AGAGGGC	TGTCAGGGGGCG	+

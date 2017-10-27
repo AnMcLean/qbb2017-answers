@@ -1,0 +1,24 @@
+# 1-order Markov frequencies from file memechip_out/loss.fa
+# seqs: 56    min: 296    max: 471    avg: 341.4    sum: 19120    alph: DNA
+# order 0
+A 2.715e-01
+C 2.285e-01
+G 2.285e-01
+T 2.715e-01
+# order 1
+AA 8.041e-02
+AC 5.621e-02
+AG 7.483e-02
+AT 6.011e-02
+CA 7.826e-02
+CC 6.281e-02
+CG 1.248e-02
+CT 7.483e-02
+GA 5.917e-02
+GC 5.051e-02
+GG 6.281e-02
+GT 5.621e-02
+TA 5.350e-02
+TC 5.917e-02
+TG 7.826e-02
+TT 8.041e-02
