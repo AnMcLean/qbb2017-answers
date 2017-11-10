@@ -1,0 +1,14 @@
+Week 8 Shell Commands
+
+# install HiFive:
+sudo pip instal hifive
+
+# normalize data:
+hifive 5c-complete express Nora_Primers.bed -C Nora_ESC_male_E14.counts -P Nora
+
+# create heatmap:
+hifive 5c-heatmap Nora.fcp Nora_fragment.heat -i Nora_fragment.png -F npz -a compact -b 0 -d fragment
+hifive 5c-heatmap Nora.fcp Nora_enrichment.heat -i Nora_enrichment.png -F npz -a compact -b 0 -d enrichment
+
+# find top interacting CTCF sites:
+./CTCF_interactions.py ctcf_peaks.tsv Nora_Primers.bed > top_ctcf_interactions.txt
