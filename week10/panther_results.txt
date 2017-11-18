@@ -1,0 +1,28 @@
+Slc25a37
+Organism:	Mus musculus
+View Gene in Tree	
+Tree	Reduced Tree  
+Tree	Reduced Tree
+Gene Name:	Mitoferrin-1
+Gene ID:	MGI:1914962
+Protein ID:	Q920G8
+Alternate Ids:	
+AAL23859(EMBL-CDS)	Slc25a37(Symbol)
+MFRN1_MOUSE(UniProtKB-ID)	17158033(GI)
+Mm.489765(UniGene)	AF288621(EMBL)
+MGI:1914962(MGI)	Mfrn(Synonym)
+ENSMUSG00000093954(Ensembl)	Q8C367(AltAccession)
+67712(GeneID)
+Show All
+
+PANTHER CLASSIFICATION
+PANTHER Family:	FAMILY NOT NAMED (PTHR45758) 
+PANTHER Subfamily:	MITOFERRIN-1 (PTHR45758:SF7)  
+PANTHER GO-slim Molecular Function:	cation transmembrane transporter activity
+
+PANTHER GO-slim Biological Process:	cellular process
+mitochondrial transport
+
+PANTHER GO-slim Cellular Component:	
+PANTHER protein class:	
+Pathway Categories:	No pathway information available 
