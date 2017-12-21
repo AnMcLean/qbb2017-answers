@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-
-
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,7 +7,7 @@ import pandas as pd
 
 """
 
-./01-heatmap_maker.py abundance_table.tab
+./02-heatmap_maker.py abundance_table.tab
 
 """   
 
@@ -30,7 +28,9 @@ for i in df_samples.index.tolist():
 plt.figure()
 plt.imshow(df_samples, aspect='auto', interpolation='nearest')
 plt.title("Bacterial Abundance in Infant Gut Microbiome")
+plt.xlabel("Sample")
 plt.xticks(range(len(df_samples.columns)), df_samples.columns, rotation='vertical')
+plt.ylabel("Species")
 plt.yticks([x for x in range(len(bins))], bins)
 plt.colorbar(label='Abundance')
 plt.tight_layout()
