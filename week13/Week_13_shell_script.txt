@@ -1,0 +1,52 @@
+Week 13 Lab Shell Commands
+
+Step 0.
+
+wget https://bitbucket.org/berkeleylab/metabat/get/dev.tar.gztar xzvf dev.tar.gz
+
+Step 1.
+
+curl -LOk https://github.com/marbl/Krona/releases/download/v2.7/KronaTools-2.7.tar
+tar xvf KronaTools-2.7.tar
+cd KronaTools-2.7
+./install.pl
+./01-seperater.py SRR492183.kraken > SRR492183_for_krona
+./01-seperater.py SRR492186.kraken > SRR492186_for_krona
+./01-seperater.py SRR492188.kraken > SRR492188_for_krona
+./01-seperater.py SRR492189.kraken > SRR492189_for_krona
+./01-seperater.py SRR492190.kraken > SRR492190_for_krona
+./01-seperater.py SRR492193.kraken > SRR492193_for_krona
+./01-seperater.py SRR492194.kraken > SRR492194_for_krona
+./01-seperater.py SRR492197.kraken > SRR492197_for_krona
+ktImportText SRR492183_for_krona > SRR492183.krona.html
+ktImportText SRR492186_for_krona > SRR492186.krona.html
+ktImportText SRR492188_for_krona > SRR492188.krona.html
+ktImportText SRR492189_for_krona > SRR492189.krona.html
+ktImportText SRR492190_for_krona > SRR492190.krona.html
+ktImportText SRR492193_for_krona > SRR492193.krona.html
+ktImportText SRR492194_for_krona > SRR492194.krona.html
+ktImportText SRR492197_for_krona > SRR492197.krona.html
+
+Step 2.
+
+wget https://bx.bio.jhu.edu/data/cmdb-lab/bins.tar
+tar xzvf bins.tar
+
+Step 3.
+
+grep ">" bin.1.fa | head
+grep ">" bin.2.fa | head
+grep ">" bin.3.fa | head
+grep ">" bin.4.fa | head
+grep ">" bin.5.fa | head
+grep ">" bin.6.fa | head
+grep ">" bin.7.fa | head
+grep ">" bin.8.fa | head
+grep “NODE_x” ~/qbb2017-answers/week13/KRAKEN/assembly.kraken # where x corresponds to one of the contigs identified in the previous step.
+
+Step 4.
+
+./02-heatmap_maker.py abundance_table.tab
+
+
+

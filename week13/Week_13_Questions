@@ -1,0 +1,12 @@
+Week 13 Questions
+
+1. The microbes are mainly bacteria; although, a small portion of the microbiota are viruses. Amongst the bacteria, Enterococcus faecalis is the predominant species.  However, it becomes comparatively less abundant as Staphylococcis haemolyticus becomes relatively more abundant at later time points.
+
+2. Contigs can be binned with metrics like GC content, read abundance, and tetranucleotide frequency.
+
+3. I got 8 bins. Prokaryote genomes range in size from around 1 to 10 Mbp, meaning the contigs are a fraction of 1% of the total genome. The bin sizes seem reasonable.  To assess contamination, you could measure the percentage of the contains assigned to each bin that belong to an organism other than the prevailing organism in that bin.
+
+4. You could calculate the fraction of contigs allocated to each bin with a specific KRAKEN clacification.
+
+5. They generally show the same trend.
+
